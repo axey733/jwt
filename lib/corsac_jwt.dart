@@ -173,7 +173,7 @@ class JWT {
     'exp',
     'nbf',
     'sub',
-    'jti'
+    'uid'
   ];
 
   /// Allows access to the full headers map.
@@ -250,8 +250,8 @@ class JWT {
   /// standard `sub` claim).
   String get subject => _claims['sub'];
 
-  /// Unique identifier of this token (value of standard `jti` claim).
-  String get id => _claims['jti'];
+  /// Unique identifier of this token (value of standard `uid` claim).
+  String get id => _claims['uid'];
 
   @override
   String toString() {
@@ -311,7 +311,7 @@ class JWTBuilder {
   }
 
   set id(String id) {
-    _claims['jti'] = id;
+    _claims['uid'] = id;
   }
 
   /// Sets value of private (custom) claim.
